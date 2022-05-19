@@ -1,0 +1,225 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  overflow: scroll;
+  background-color: #fefefe;
+  width: 70%;
+  height: 80vh;
+  left: 15%;
+  padding: 2em;
+  margin-top: 3em;
+  border: 1px solid rgba(209, 209, 209, 0.634);
+  border-radius: 0.5em;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+.modal-content.confirm {
+  overflow: hidden;
+  width: 35%;
+  height: fit-content;
+  left: 35%;
+}
+.s-modal.selected {
+  border: 1px solid var(--Moderate-cyan);
+  transform: scale(1.05);
+}
+/* The Close Button */
+.close {
+  color: gray;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  color: black;
+}
+.s-modal:hover .title {
+  color: var(--Moderate-cyan);
+  cursor: pointer;
+}
+.modal-desc {
+  margin: 1em;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 2px 16px;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.container_radio {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container_radio input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid rgb(194, 194, 194);
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.container_radio:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container_radio input:checked ~ .checkmark {
+  background-color: var(--Moderate-cyan);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container_radio input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.s-modal {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  transition: 0.3s;
+}
+.s-modal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.042);
+}
+.s-modal:hover .checkmark {
+  border-color: var(--Moderate-cyan);
+}
+
+.pledge {
+  display: none;
+  padding: 1em;
+  border-top: 1px solid rgb(200, 200, 200);
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+.form .l {
+  font-weight: 600;
+}
+.input_group {
+  display: flex;
+  gap: 0.5em;
+}
+.input_group input {
+  position: relative;
+  width: 80px;
+  height: 70%;
+  align-self: center;
+  border-radius: 30px;
+  border: 1px solid rgb(200, 200, 200);
+  text-align: center;
+}
+
+.input_group input:focus {
+  outline: none;
+}
+.input_group .continue {
+  background-color: var(--Moderate-cyan);
+  color: #fff;
+}
+.input_group .continue:hover {
+  cursor: pointer;
+  background-color: var(--Dark-cyan);
+}
+.modal_confirm {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_confirm .btn {
+  background-color: var(--Moderate-cyan);
+  color: white;
+}
